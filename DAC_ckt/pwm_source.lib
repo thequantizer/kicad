@@ -1,0 +1,29 @@
+.subckt pwm_source  clk cntl_in clear out gnd
+*****************************************************************
+* freq = frequency of control signal
+* sample_rate = number of pwm pulses per control signal cycle
+*****************************************************************
+.param freq=250 sample_rate=10
+ain clk cntl_in clear out pulse2
+*****************************************************************
+* create output by sampeling the control signal every negative
+* edge of the clk and firing a square with a lingth determined by the 
+* line (-5.1, 0), (5.1, 1/(freq*sample_rate)) => -5v = no pulse 0v = 1/2 clk cycle 
+* 5v= 1 clk cycle. 
+* used -5.1 and 5.1 because -5.0 and 5.0 would cause the pulse to not work at the
+* peak and min voltage
+*****************************************************************
+.model pulse2 oneshot(cntl_array = [-5.1 5.1]
++                     pw_array=[0 {1/(freq*sample_rate)}]
++                     clk_trig = 0.9 pos_edge_trig = FALSE
++                     out_low = 0.0 out_high = 5
++                     rise_delay = 20.0e-9 fall_delay = 35.0e-9)
+*****************************************************************
+* create clock signal
+*****************************************************************
+Vclk clk gnd dc 0 pulse(0 1 2n 2n 2n {1/(freq*sample_rate*2)} {1/(freq*sample_rate)})
+*****************************************************************
+* create control signal
+*****************************************************************
+Vsignal cntl_in gnd dc 0 sin(0 5 freq)
+.ends

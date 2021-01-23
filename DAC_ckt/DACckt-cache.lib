@@ -1,0 +1,76 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Custom_Quantizer_PWM_Source
+#
+DEF Custom_Quantizer_PWM_Source V 0 1 N Y 1 F N
+F0 "V" 200 100 50 H V L CNN
+F1 "Custom_Quantizer_PWM_Source" -200 -100 50 H V L CNN
+F2 "" 200 100 50 H I C CNN
+F3 "" 200 100 50 H I C CNN
+F4 "Y" 200 100 50 H I L CNN "Spice_Netlist_Enabled"
+F5 "X" 200 100 50 H I L CNN "Spice_Primitive"
+DRAW
+S -450 200 450 -300 0 1 0 f
+P 8 0 0 0 -80 -30 -55 -30 -45 30 -5 30 5 -30 45 -30 55 30 80 30 N
+X clk 1 0 300 100 D 50 50 1 1 P
+X cntl_in 2 -550 50 100 R 50 50 1 1 P
+X clear 3 -550 -100 100 R 50 50 1 1 P
+X out 4 550 -50 100 L 50 50 1 1 P
+X gnd 5 0 -400 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_C
+#
+DEF Device_C C 0 10 N Y 1 F N
+F0 "C" 25 100 50 H V L CNN
+F1 "Device_C" 25 -100 50 H V L CNN
+F2 "" 38 -150 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ C_*
+$ENDFPLIST
+DRAW
+P 2 0 1 20 -80 -30 80 -30 N
+P 2 0 1 20 -80 30 80 30 N
+X ~ 1 0 150 110 D 50 50 1 1 P
+X ~ 2 0 -150 110 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Device_R_US
+#
+DEF Device_R_US R 0 0 N Y 1 F N
+F0 "R" 100 0 50 V V C CNN
+F1 "Device_R_US" -100 0 50 V V C CNN
+F2 "" 40 -10 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ R_*
+$ENDFPLIST
+DRAW
+P 2 0 1 0 0 -90 0 -100 N
+P 2 0 1 0 0 90 0 100 N
+P 5 0 1 0 0 -30 40 -45 0 -60 -40 -75 0 -90 N
+P 5 0 1 0 0 30 40 15 0 0 -40 -15 0 -30 N
+P 5 0 1 0 0 90 40 75 0 60 -40 45 0 30 N
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# power_GND
+#
+DEF power_GND #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "power_GND" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GND 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+#End Library

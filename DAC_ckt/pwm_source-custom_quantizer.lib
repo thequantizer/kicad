@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# PWM_Source-Custom_Quantizer
+#
+DEF PWM_Source-Custom_Quantizer V 0 1 N Y 1 F N
+F0 "V" 200 100 50 H V L CNN
+F1 "PWM_Source-Custom_Quantizer" -200 -100 50 H V L CNN
+F2 "" 200 100 50 H I C CNN
+F3 "" 200 100 50 H I C CNN
+F4 "Y" 200 100 50 H I L CNN "Spice_Netlist_Enabled"
+F5 "X" 200 100 50 H I L CNN "Spice_Primitive"
+DRAW
+S -450 200 450 -300 0 1 0 f
+P 8 0 0 0 -80 -30 -55 -30 -45 30 -5 30 5 -30 45 -30 55 30 80 30 N
+X clk 1 0 300 100 D 50 50 1 1 P
+X cntl_in 2 -550 50 100 R 50 50 1 1 P
+X clear 3 -550 -100 100 R 50 50 1 1 P
+X out 4 550 -50 100 L 50 50 1 1 P
+X gnd 5 0 -400 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

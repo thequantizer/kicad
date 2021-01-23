@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name DACckt-rescue)(type Legacy)(uri ${KIPRJMOD}/DACckt-rescue.lib)(options "")(descr ""))
+  (lib (name pwm_source-custom_quantizer)(type Legacy)(uri ${KIPRJMOD}/pwm_source-custom_quantizer.lib)(options "")(descr ""))
+)
